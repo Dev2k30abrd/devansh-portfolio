@@ -61,23 +61,56 @@ export default function Home() {
       </motion.section>
 
       {/* PROJECTS */}
-      <motion.section initial={{opacity:0,y:80}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="py-24 text-center">
-        <h2 className="text-4xl font-bold mb-12">Projects</h2>
+      {/* PROJECTS */}
+<motion.section
+  initial={{opacity:0,y:80}}
+  whileInView={{opacity:1,y:0}}
+  viewport={{once:true}}
+  className="py-24 text-center"
+>
+  <h2 className="text-4xl font-bold mb-12">Projects</h2>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <motion.div whileHover={{y:-10}} className="p-6 border rounded-xl">
-            <h3 className="text-2xl mb-3">Electricity Consumption Analysis</h3>
-            <p className="mb-4">Data analysis using Python, Pandas & Matplotlib.</p>
-            <a href="https://github.com/Dev2k30abrd/Electricity-Consumption-Analysis-and-Cost-Prediction" target="_blank" className="text-purple-500">View Project</a>
-          </motion.div>
+  <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
-          <motion.div whileHover={{y:-10}} className="p-6 border rounded-xl">
-            <h3 className="text-2xl mb-3">EventFlow – IIT Bhilai Hackathon</h3>
-            <p className="mb-4">Hackathon project solving real-world event problems.</p>
-            <a href="https://github.com/Dev2k30abrd/EventFlow-App" target="_blank" className="text-purple-500">View Project</a>
-          </motion.div>
-        </div>
-      </motion.section>
+    {/* Electricity Project */}
+    <motion.div whileHover={{y:-10}} className="p-6 border rounded-xl">
+      <h3 className="text-2xl mb-3">Electricity Consumption Analysis</h3>
+      <p className="mb-4">
+        Data analysis project using Python, Pandas and Matplotlib to analyze electricity usage
+        and forecast future cost trends.
+      </p>
+      <a href="https://github.com/Dev2k30abrd/Electricity-Consumption-Analysis-and-Cost-Prediction" target="_blank" className="text-purple-500">
+        View Project
+      </a>
+    </motion.div>
+
+    {/* Hackathon Project */}
+    <motion.div whileHover={{y:-10}} className="p-6 border rounded-xl">
+      <h3 className="text-2xl mb-3">EventFlow – IIT Bhilai Hackathon</h3>
+      <p className="mb-4">
+        Team hackathon project solving real-world event management problems
+        and improving event organization workflows.
+      </p>
+      <a href="https://github.com/Dev2k30abrd/EventFlow-App" target="_blank" className="text-purple-500">
+        View Project
+      </a>
+    </motion.div>
+
+    {/* Excel Project */}
+    <motion.div whileHover={{y:-10}} className="p-6 border rounded-xl">
+      <h3 className="text-2xl mb-3">Excel Sales Analytics Dashboard</h3>
+      <p className="mb-4">
+        Built an end-to-end Sales Analytics Dashboard in Microsoft Excel using data cleaning,
+        advanced formulas, Pivot Tables and interactive charts to analyze revenue,
+        profit and regional performance.
+      </p>
+      <a href="https://github.com/Dev2k30abrd/Excel_Sales_Analytics_Dashboard" target="_blank" className="text-purple-500">
+        View Project
+      </a>
+    </motion.div>
+
+  </div>
+</motion.section>
 
       {/* CONTACT */}
       <motion.section initial={{opacity:0,y:80}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="py-24 text-center">
