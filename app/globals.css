@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base styles */
+body {
+  background: white;
+  color: #0f172a;
+  font-family: Arial, Helvetica, sans-serif;
+}
