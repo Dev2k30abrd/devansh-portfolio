@@ -1,129 +1,150 @@
-"use client";
-
-import { motion, useScroll, useSpring } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
-import { useState } from "react";
-import Particles from "react-tsparticles";
+"use client"
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
-  const [dark, setDark] = useState(false);
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress);
+
+  /* typing animation */
+  const roles = ["Data Analyst","Future Data Engineer","ML Enthusiast"];
+  const [text,setText] = useState("");
+  const [i,setI] = useState(0);
+  const [j,setJ] = useState(0);
+  const [back,setBack] = useState(false);
+
+  useEffect(()=>{
+    const timer = setTimeout(()=>{
+      if(!back){
+        setText(roles[i].substring(0,j+1));
+        setJ(j+1);
+        if(j === roles[i].length) setBack(true);
+      }else{
+        setText(roles[i].substring(0,j-1));
+        setJ(j-1);
+        if(j===0){ setBack(false); setI((i+1)%roles.length); }
+      }
+    }, back?50:120);
+    return ()=>clearTimeout(timer);
+  },[j,back,i]);
+
+  const fadeUp = {
+    hidden:{opacity:0,y:70},
+    show:{opacity:1,y:0,transition:{duration:.8}}
+  };
 
   return (
-    <div className={dark ? "dark bg-black text-white" : "bg-white text-slate-900"}>
+    <main className="bg-[#0b0f19] text-white">
 
-      {/* Scroll Progress */}
-      <motion.div style={{ scaleX }} className="fixed top-0 left-0 right-0 h-1 bg-purple-500 z-50"/>
-
-      {/* Particles */}
-      <Particles options={{particles:{number:{value:50},move:{speed:0.5},links:{enable:true}}}} className="absolute -z-10"/>
-
-      {/* Dark toggle */}
-      <button onClick={()=>setDark(!dark)} className="fixed top-5 right-5 px-4 py-2 bg-purple-500 text-white rounded-full z-50">
-        {dark ? "Light" : "Dark"}
-      </button>
+      {/* CONTACT BAR */}
+      <div className="fixed top-0 w-full text-center py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white z-50 shadow-lg">
+        <div className="flex justify-center gap-10 items-center">
+          <a href="mailto:raidevansh90@gmail.com">📧 Email</a>
+          <a href="https://github.com/Dev2k30abrd" target="_blank">💻 GitHub</a>
+          <a href="https://linkedin.com/in/devansh-rai-473506327" target="_blank">🔗 LinkedIn</a>
+        </div>
+      </div>
 
       {/* HERO */}
-      <section className="max-w-6xl mx-auto px-6 py-32">
-        <motion.h1 initial={{opacity:0,y:60}} animate={{opacity:1,y:0}} className="text-6xl font-bold mb-6 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-          Devansh Rai
+      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-28">
+        <motion.h1 variants={fadeUp} initial="hidden" animate="show"
+          className="text-6xl font-bold mb-6 hover:scale-105 transition">
+          Hello 👋 I'm Devansh Rai
         </motion.h1>
 
-        <TypeAnimation sequence={["Data Analyst",1500,"ML Enthusiast",1500,"Future Data Engineer",1500]} wrapper="h2" repeat={Infinity} className="text-3xl mb-6"/>
+        <motion.h2 variants={fadeUp} initial="hidden" animate="show"
+          className="text-2xl text-blue-400 mb-8 h-8">
+          {text} |
+        </motion.h2>
 
-        <p className="max-w-2xl mb-8">
-          BTech Computer Science (Data Science) student passionate about Data Analytics, dashboards and Machine Learning.
-        </p>
+        <motion.a variants={fadeUp} initial="hidden" animate="show"
+          href="/resume.pdf" target="_blank">
+          <button className="px-8 py-3 rounded-lg bg-blue-600 text-white font-semibold
+          shadow-[0_0_25px_#3b82f6] hover:shadow-[0_0_40px_#3b82f6] hover:scale-110 transition">
+            Download Resume
+          </button>
+        </motion.a>
       </section>
 
       {/* ABOUT */}
-      <motion.section initial={{opacity:0,y:80}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="py-24 text-center">
-        <h2 className="text-4xl font-bold mb-6">About</h2>
-        <p className="max-w-3xl mx-auto">
-          I transform raw data into meaningful insights using SQL, Python and Power BI. 
-          Career goal: Data Analyst → Data Engineer → Machine Learning Engineer working in global teams.
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" viewport={{once:true}}
+        className="py-24 text-center px-6">
+        <h2 className="text-4xl font-bold mb-8 hover:text-blue-400 transition">About Me</h2>
+
+        <p className="max-w-4xl mx-auto text-lg text-slate-300 leading-relaxed">
+          I am a Computer Science undergraduate specializing in Data Science with a strong focus on 
+          data analytics, business intelligence and data-driven decision making.  
           <br/><br/>
-          Currently learning: Machine Learning, Advanced SQL, Data Engineering.
+          I enjoy transforming raw datasets into meaningful insights using Python, SQL, Excel and Power BI. 
+          My projects focus on real-world problem solving, exploratory data analysis, dashboard creation and 
+          identifying trends that help businesses make smarter decisions.
+          <br/><br/>
+          Currently, I am continuously expanding my knowledge in Machine Learning, Advanced SQL and Data Engineering 
+          to build scalable data solutions and intelligent systems. My long-term goal is to grow from a Data Analyst 
+          into a Data Engineer and ultimately a Machine Learning Engineer contributing to global tech teams and 
+          remote-first companies.
         </p>
       </motion.section>
 
       {/* SKILLS */}
-      <motion.section initial={{opacity:0,y:80}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="py-24 text-center">
-        <h2 className="text-4xl font-bold mb-12">Skills</h2>
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {["Excel","SQL","Python","Power BI","Data Cleaning","Data Visualization","Statistics","GitHub","Basic DSA"].map(skill=>(
-            <motion.div whileHover={{scale:1.1}} key={skill} className="p-6 border rounded-xl">
-              {skill}
-            </motion.div>
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" viewport={{once:true}}
+        className="py-24 text-center px-6">
+        <h2 className="text-4xl font-bold mb-12 hover:text-blue-400 transition">Skills</h2>
+
+        <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto text-left">
+
+          {[
+            {title:"Analysis",items:["EDA","Data Cleaning","Visualization","Statistics"]},
+            {title:"Languages",items:["Python","SQL"]},
+            {title:"Tools",items:["Excel","Power BI","GitHub"]},
+            {title:"Databases",items:["MySQL"]}
+          ].map(card=>(
+            <div key={card.title} className="p-6 bg-slate-800 rounded-xl shadow hover:scale-105 transition">
+              <h3 className="font-bold text-xl mb-3">{card.title}</h3>
+              <ul className="list-disc pl-5">
+                {card.items.map(i=><li key={i}>{i}</li>)}
+              </ul>
+            </div>
           ))}
+
         </div>
       </motion.section>
 
       {/* PROJECTS */}
-      {/* PROJECTS */}
-<motion.section
-  initial={{opacity:0,y:80}}
-  whileInView={{opacity:1,y:0}}
-  viewport={{once:true}}
-  className="py-24 text-center"
->
-  <h2 className="text-4xl font-bold mb-12">Projects</h2>
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" viewport={{once:true}}
+        className="py-24 text-center px-6">
+        <h2 className="text-4xl font-bold mb-12 hover:text-blue-400 transition">Projects</h2>
 
-  <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto text-left">
 
-    {/* Electricity Project */}
-    <motion.div whileHover={{y:-10}} className="p-6 border rounded-xl">
-      <h3 className="text-2xl mb-3">Electricity Consumption Analysis</h3>
-      <p className="mb-4">
-        Data analysis project using Python, Pandas and Matplotlib to analyze electricity usage
-        and forecast future cost trends.
-      </p>
-      <a href="https://github.com/Dev2k30abrd/Electricity-Consumption-Analysis-and-Cost-Prediction" target="_blank" className="text-purple-500">
-        View Project
-      </a>
-    </motion.div>
+          <div className="p-6 bg-slate-800 rounded-xl shadow hover:scale-105 transition">
+            <h3 className="text-2xl mb-3">Electricity Consumption Analysis</h3>
+            <ul className="list-disc pl-5 mb-3">
+              <li>Python & Pandas analysis</li>
+              <li>EDA & visualization</li>
+            </ul>
+            <a href="https://github.com/Dev2k30abrd/Electricity-Consumption-Analysis-and-Cost-Prediction" target="_blank" className="text-blue-400">GitHub Repo →</a>
+          </div>
 
-    {/* Hackathon Project */}
-    <motion.div whileHover={{y:-10}} className="p-6 border rounded-xl">
-      <h3 className="text-2xl mb-3">EventFlow – IIT Bhilai Hackathon</h3>
-      <p className="mb-4">
-        Team hackathon project solving real-world event management problems
-        and improving event organization workflows.
-      </p>
-      <a href="https://github.com/Dev2k30abrd/EventFlow-App" target="_blank" className="text-purple-500">
-        View Project
-      </a>
-    </motion.div>
+          <div className="p-6 bg-slate-800 rounded-xl shadow hover:scale-105 transition">
+            <h3 className="text-2xl mb-3">Excel Sales Dashboard</h3>
+            <ul className="list-disc pl-5 mb-3">
+              <li>Interactive Excel dashboard</li>
+              <li>KPIs & charts</li>
+            </ul>
+            <a href="https://github.com/Dev2k30abrd/Excel_Sales_Analytics_Dashboard" target="_blank" className="text-blue-400">GitHub Repo →</a>
+          </div>
 
-    {/* Excel Project */}
-    <motion.div whileHover={{y:-10}} className="p-6 border rounded-xl">
-      <h3 className="text-2xl mb-3">Excel Sales Analytics Dashboard</h3>
-      <p className="mb-4">
-        Built an end-to-end Sales Analytics Dashboard in Microsoft Excel using data cleaning,
-        advanced formulas, Pivot Tables and interactive charts to analyze revenue,
-        profit and regional performance.
-      </p>
-      <a href="https://github.com/Dev2k30abrd/Excel_Sales_Analytics_Dashboard" target="_blank" className="text-purple-500">
-        View Project
-      </a>
-    </motion.div>
+          <div className="p-6 bg-slate-800 rounded-xl shadow hover:scale-105 transition md:col-span-2">
+            <h3 className="text-2xl mb-3">EventFlow – IIT Bhilai Hackathon</h3>
+            <ul className="list-disc pl-5 mb-3">
+              <li>Event management web app</li>
+              <li>Hackathon project</li>
+            </ul>
+            <a href="https://github.com/Dev2k30abrd/EventFlow-App" target="_blank" className="text-blue-400">GitHub Repo →</a>
+          </div>
 
-  </div>
-</motion.section>
-
-      {/* CONTACT */}
-      <motion.section initial={{opacity:0,y:80}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="py-24 text-center">
-        <h2 className="text-4xl font-bold mb-6">Contact</h2>
-        <p className="mb-6">Open to internships & freelance opportunities.</p>
-
-        <div className="flex justify-center gap-6">
-          <a href="mailto:raidevansh90@gmail.com">Email</a>
-          <a href="https://github.com/Dev2k30abrd" target="_blank">GitHub</a>
-          <a href="https://linkedin.com/in/devansh-rai-473506327" target="_blank">LinkedIn</a>
         </div>
       </motion.section>
 
-    </div>
+    </main>
   );
 }
