@@ -88,7 +88,7 @@ export default function Home() {
 
         <div className="flex justify-center gap-4">
           <a
-            href="/resume.pdf"
+            href="/resume.pdf?v=2"
             target="_blank"
             className="px-8 py-4 bg-black text-white rounded-full hover:scale-105 transition shadow-lg"
           >
