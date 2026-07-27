@@ -409,7 +409,7 @@ export default function Home() {
               className="px-7 py-3.5 rounded-full text-sm font-medium transition-all hover:scale-[1.03]"
               style={{ background: c.accent, color: "#12100D" }}
             >
-              Download Résumé
+              Download Resume
             </a>
             <a
               href="#projects"
