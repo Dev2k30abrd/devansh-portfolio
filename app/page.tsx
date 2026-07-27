@@ -181,19 +181,19 @@ const PROJECTS = [
     title: "Flood Risk Decision Support System",
     tag: "Python · Streamlit",
     desc: "Machine-learning-powered flood risk assessment system supporting disaster preparedness, built on top of thorough EDA, preprocessing, and feature engineering.",
-    href: "https://github.com/Dev2k30abrd",
+    href: "https://github.com/Dev2k30abrd/Flood-Risk-Decision-Support-System",
   },
   {
     title: "Smart Travel Planner",
     tag: "Python · Scikit-learn",
     desc: "Linear Regression and Random Forest models for travel budget prediction, deployed as a Streamlit app for real-time estimation and destination recommendations.",
-    href: "https://github.com/Dev2k30abrd",
+    href: "https://github.com/Dev2k30abrd/smart-travel-planner",
   },
   {
     title: "Advanced SQL Business Analysis",
     tag: "MySQL · SQL",
     desc: "Analyzed 20,000+ business records to surface revenue-driving segments, using CTEs, window functions, and ranking queries.",
-    href: "https://github.com/Dev2k30abrd",
+    href: "https://github.com/Dev2k30abrd/Advanced-SQL-Business-Analysis",
   },
 ];
 
@@ -209,9 +209,12 @@ const ACHIEVEMENTS = [
 ];
 
 const CERTIFICATIONS = [
-  { title: "Microsoft Applied Skills Credential", year: "2026" },
-  { title: "Python for Data Science and Machine Learning Bootcamp", year: "Udemy, 2026" },
-  { title: "BCGX Data Science Job Simulation", year: "Forage, 2026" },
+  { title: "Microsoft Applied Skills Credential", year: "2026" ,
+   href: "https://learn.microsoft.com/api/credentials/share/en-in/DEVANSHRAI-9874/35ECCCDBCBF9777B?sharingId",},
+  { title: "Python for Data Science and Machine Learning Bootcamp", year: "Udemy, 2026" ,
+   href: "https://www.udemy.com/certificate/UC-16ae6c55-3f2c-493f-8585-214015e7c272/",},
+  { title: "BCGX Data Science Job Simulation", year: "Forage, 2026" ,
+   href: "https://www.theforage.com/completion-certificates/SKZxezskWgmFjRvj9/Tcz8gTtprzAS4xSoK_SKZxezskWgmFjRvj9_69dd26447aa245d389b1a8f3_1777052010754_completion_certificate.pdf",},
 ];
 
 export default function Home() {
