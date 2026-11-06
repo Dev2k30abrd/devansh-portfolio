@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Deep Cinematic Navy & Charcoal Canvas -->
+    <linearGradient id="bg-navy-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060913"/>
+      <stop offset="40%" stop-color="#0A1022"/>
+      <stop offset="75%" stop-color="#0E172E"/>
+      <stop offset="100%" stop-color="#070A14"/>
+    </linearGradient>
+
+    <!-- Warm Amber / Orange Key Light Source (Studio Key Light) -->
+    <radialGradient id="amber-key-light" cx="72%" cy="22%" r="65%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.45"/>
+      <stop offset="25%" stop-color="#EA580C" stop-opacity="0.25"/>
+      <stop offset="55%" stop-color="#4F46E5" stop-opacity="0.12"/>
+      <stop offset="85%" stop-color="#060913" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Secondary Soft Violet / Blue Ambient Fill (Left) -->
+    <radialGradient id="violet-fill-light" cx="18%" cy="75%" r="55%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.28"/>
+      <stop offset="40%" stop-color="#8B5CF6" stop-opacity="0.12"/>
+      <stop offset="80%" stop-color="#060913" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Realistic 3D Soft Drop Shadows -->
+    <filter id="shadow-realistic-large" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="15" dy="35" stdDeviation="28" flood-color="#02040A" flood-opacity="0.85"/>
+    </filter>
+    <filter id="shadow-realistic-med" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="10" dy="25" stdDeviation="20" flood-color="#02040A" flood-opacity="0.75"/>
+    </filter>
+    <filter id="dof-blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4.5"/>
+    </filter>
+    <filter id="glow-amber" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Cube 1 (Left Hero Cube) Facet Shading Gradients -->
+    <!-- Top Face: Directly hit by warm amber key light -->
+    <linearGradient id="cube1-top" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#FEF3C7"/>
+    </linearGradient>
+    <!-- Right Face: Warm bounce / edge specular -->
+    <linearGradient id="cube1-right" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EA580C"/>
+      <stop offset="45%" stop-color="#C2410C"/>
+      <stop offset="100%" stop-color="#312E81"/>
+    </linearGradient>
+    <!-- Left Face: Deep navy / obsidian shadow face -->
+    <linearGradient id="cube1-left" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="60%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#080C17"/>
+    </linearGradient>
+
+    <!-- Cube 2 (Right Hero Cube) Facet Shading Gradients -->
+    <linearGradient id="cube2-top" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="60%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="cube2-front" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EA580C"/>
+      <stop offset="50%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="cube2-side" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#312E81"/>
+      <stop offset="60%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+
+    <!-- Background Cubes Gradients -->
+    <linearGradient id="bg-cube-amber" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FDE68A" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="bg-cube-shadow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0B0F1D" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Orbit Rings Gradients -->
+    <linearGradient id="ring-amber-violet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.8"/>
+      <stop offset="45%" stop-color="#8B5CF6" stop-opacity="0.5"/>
+      <stop offset="85%" stop-color="#38BDF8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base Deep Navy/Charcoal Atmosphere -->
+  <rect width="1920" height="1080" fill="url(#bg-navy-gradient)" />
+  <rect width="1920" height="1080" fill="url(#amber-key-light)" />
+  <rect width="1920" height="1080" fill="url(#violet-fill-light)" />
+
+  <!-- Diagonal Warm Volumetric Key Beam (Atmospheric light shaft from top-right) -->
+  <path d="M 1250 -50 L 1920 180 L 1650 1080 L 850 1080 Z"
+        fill="url(#amber-key-light)" opacity="0.4" style="mix-blend-mode: screen;" />
+
+  <!-- Perspective Depth Floor Grid (Subtle horizon lines) -->
+  <g opacity="0.22" stroke="#6366F1" stroke-width="1.2">
+    <line x1="960" y1="560" x2="100" y2="1080" stroke-opacity="0.3"/>
+    <line x1="960" y1="560" x2="480" y2="1080" stroke-opacity="0.4"/>
+    <line x1="960" y1="560" x2="800" y2="1080" stroke-opacity="0.5"/>
+    <line x1="960" y1="560" x2="960" y2="1080" stroke-opacity="0.6"/>
+    <line x1="960" y1="560" x2="1120" y2="1080" stroke-opacity="0.5"/>
+    <line x1="960" y1="560" x2="1440" y2="1080" stroke-opacity="0.4"/>
+    <line x1="960" y1="560" x2="1820" y2="1080" stroke-opacity="0.3"/>
+    <ellipse cx="960" cy="980" rx="1050" ry="220" fill="none" stroke-opacity="0.4"/>
+    <ellipse cx="960" cy="850" rx="840" ry="160" fill="none" stroke-opacity="0.3"/>
+  </g>
+
+  <!-- Far Background Blurred 3D Cube (Upper Right) -->
+  <g transform="translate(1600, 110) scale(0.65)" filter="url(#dof-blur)" opacity="0.6">
+    <!-- Top -->
+    <polygon points="100,20 170,55 100,90 30,55" fill="url(#bg-cube-amber)" />
+    <!-- Left -->
+    <polygon points="30,55 100,90 100,180 30,145" fill="url(#bg-cube-shadow)" />
+    <!-- Right -->
+    <polygon points="100,90 170,55 170,145 100,180" fill="#EA580C" opacity="0.75" />
+  </g>
+
+  <!-- Far Background Blurred 3D Cube (Lower Left) -->
+  <g transform="translate(110, 680) scale(0.7)" filter="url(#dof-blur)" opacity="0.55">
+    <!-- Top -->
+    <polygon points="100,20 170,55 100,90 30,55" fill="url(#bg-cube-amber)" />
+    <!-- Left -->
+    <polygon points="30,55 100,90 100,180 30,145" fill="url(#bg-cube-shadow)" />
+    <!-- Right -->
+    <polygon points="100,90 170,55 170,145 100,180" fill="#4F46E5" opacity="0.6" />
+  </g>
+
+  <!-- Deep 3D Orbital Rings around Main Volume -->
+  <g opacity="0.55" filter="url(#glow-amber)">
+    <ellipse cx="960" cy="480" rx="800" ry="290" transform="rotate(-15 960 480)" fill="none" stroke="url(#ring-amber-violet)" stroke-width="2.2" stroke-dasharray="16 8"/>
+    <ellipse cx="960" cy="490" rx="720" ry="240" transform="rotate(22 960 490)" fill="none" stroke="url(#ring-amber-violet)" stroke-width="1.8"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       PRIMARY HERO 3D CUBE (Left Side - Dominant, Angled, Beveled)
+  ══════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(180, 240)" filter="url(#shadow-realistic-large)">
+    <!-- Soft Contact Shadow -->
+    <ellipse cx="140" cy="380" rx="160" ry="45" fill="#020308" opacity="0.8" filter="url(#dof-blur)"/>
+
+    <!-- Left Shadow Face -->
+    <polygon points="30,110 140,165 140,320 30,265" fill="url(#cube1-left)" />
+    
+    <!-- Right Warm Bounce Face -->
+    <polygon points="140,165 250,110 250,265 140,320" fill="url(#cube1-right)" />
+
+    <!-- Top Key-Light Face (Warm Amber/Gold) -->
+    <polygon points="140,55 250,110 140,165 30,110" fill="url(#cube1-top)" />
+
+    <!-- Sharp Beveled Specular Edges -->
+    <line x1="140" y1="55" x2="250" y2="110" stroke="#FFFBEB" stroke-width="2" stroke-linecap="round" opacity="0.95"/>
+    <line x1="30" y1="110" x2="140" y2="165" stroke="#FDE68A" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
+    <line x1="140" y1="165" x2="250" y2="110" stroke="#FDE68A" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
+    <line x1="140" y1="165" x2="140" y2="320" stroke="#F59E0B" stroke-width="1.5" opacity="0.6"/>
+    <line x1="30" y1="110" x2="30" y2="265" stroke="#38BDF8" stroke-width="1.2" opacity="0.4"/>
+    <line x1="250" y1="110" x2="250" y2="265" stroke="#EA580C" stroke-width="1.2" opacity="0.5"/>
+
+    <!-- Floating Micro Cube Accent Satellite -->
+    <g transform="translate(230, 20) scale(0.38)" filter="url(#glow-amber)">
+      <polygon points="100,20 170,55 100,90 30,55" fill="url(#cube1-top)" />
+      <polygon points="30,55 100,90 100,180 30,145" fill="url(#cube1-left)" />
+      <polygon points="100,90 170,55 170,145 100,180" fill="url(#cube1-right)" />
+    </g>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECONDARY HERO 3D CUBE (Right Side - Dynamic Perspective)
+  ══════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(1420, 290)" filter="url(#shadow-realistic-large)">
+    <!-- Soft Contact Shadow -->
+    <ellipse cx="140" cy="360" rx="150" ry="40" fill="#020308" opacity="0.75" filter="url(#dof-blur)"/>
+
+    <!-- Left Shadow Face -->
+    <polygon points="40,115 140,170 140,310 40,255" fill="url(#cube2-side)" />
+
+    <!-- Right Amber/Indigo Face -->
+    <polygon points="140,170 240,115 240,255 140,310" fill="url(#cube2-front)" />
+
+    <!-- Top Brilliant Amber Face -->
+    <polygon points="140,60 240,115 140,170 40,115" fill="url(#cube2-top)" />
+
+    <!-- Specular Edge Lines -->
+    <line x1="140" y1="60" x2="240" y2="115" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="40" y1="115" x2="140" y2="170" stroke="#FDE68A" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="140" y1="170" x2="240" y2="115" stroke="#FDE68A" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="140" y1="170" x2="140" y2="310" stroke="#FB923C" stroke-width="1.5" opacity="0.7"/>
+
+    <!-- Small Floating Prismatic Gem (Right Accent) -->
+    <g transform="translate(-50, 180) scale(0.4)" filter="url(#glow-amber)">
+      <polygon points="100,10 180,90 100,170 20,90" fill="url(#cube2-top)" opacity="0.85"/>
+      <polygon points="100,10 180,90 100,90" fill="#FFF" opacity="0.5"/>
+      <polygon points="180,90 100,170 100,90" fill="#EA580C" opacity="0.7"/>
+      <polygon points="100,170 20,90 100,90" fill="#4F46E5" opacity="0.6"/>
+      <polygon points="20,90 100,10 100,90" fill="#FBBF24" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- Mid-Top Floating Abstract 3D Geometric Tetrahedron -->
+  <g transform="translate(1180, 140) scale(0.55)" filter="url(#shadow-realistic-med)">
+    <polygon points="120,20 210,140 120,180 30,140" fill="url(#cube1-top)" opacity="0.85"/>
+    <polygon points="120,20 210,140 120,110" fill="#FEF08A" opacity="0.7"/>
+    <polygon points="210,140 120,180 120,110" fill="#EA580C" opacity="0.8"/>
+    <polygon points="120,180 30,140 120,110" fill="#4338CA" opacity="0.7"/>
+    <polygon points="30,140 120,20 120,110" fill="#38BDF8" opacity="0.6"/>
+  </g>
+
+  <!-- Ambient Golden-Amber Specular Particles & Light Dust -->
+  <g fill="#FBBF24" opacity="0.8" filter="url(#glow-amber)">
+    <circle cx="560" cy="210" r="3.5" fill="#FDE68A"/>
+    <circle cx="780" cy="170" r="4" fill="#F59E0B"/>
+    <circle cx="1120" cy="180" r="4.5" fill="#FBBF24"/>
+    <circle cx="1360" cy="220" r="3.5" fill="#FDE68A"/>
+    <circle cx="420" cy="460" r="3" fill="#38BDF8"/>
+    <circle cx="1490" cy="520" r="4" fill="#FB923C"/>
+    <circle cx="710" cy="620" r="2.5" fill="#818CF8"/>
+    <circle cx="1240" cy="580" r="3" fill="#F59E0B"/>
+    <circle cx="960" cy="190" r="3.5" fill="#FFF"/>
+  </g>
+</svg>

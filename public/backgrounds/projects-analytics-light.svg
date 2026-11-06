@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="proj-light-glow" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#E0E7FF" stop-opacity="0.8"/>
+      <stop offset="45%" stop-color="#EEF2FF" stop-opacity="0.55"/>
+      <stop offset="75%" stop-color="#F8FAFC" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wave-light-1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" stop-opacity="0.75"/>
+      <stop offset="50%" stop-color="#4F46E5" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.45"/>
+    </linearGradient>
+    <linearGradient id="wave-light-2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#0284C7" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#proj-light-glow)" />
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M 0 520 C 320 340, 640 680, 960 380 S 1440 220, 1920 420" stroke="url(#wave-light-1)" stroke-width="3" />
+    <path d="M 0 620 C 380 440, 720 740, 1080 480 S 1560 320, 1920 520" stroke="url(#wave-light-2)" stroke-width="2.6" />
+    <path d="M 0 720 C 440 560, 800 820, 1200 580 S 1680 420, 1920 620" stroke="url(#wave-light-1)" stroke-width="2" stroke-dasharray="10,8" opacity="0.75"/>
+
+    <polygon points="1520,200 1700,120 1820,240 1760,420 1600,440 1480,320" stroke="#4F46E5" stroke-width="1.8" opacity="0.5" />
+    <polygon points="1540,230 1670,170 1760,260 1720,380 1610,400 1515,315" stroke="#0284C7" stroke-width="1.4" opacity="0.45" />
+
+    <line x1="80" y1="380" x2="1840" y2="380" stroke="#4F46E5" stroke-width="1.2" stroke-dasharray="8,12" opacity="0.4" />
+    <line x1="80" y1="580" x2="1840" y2="580" stroke="#0284C7" stroke-width="1.2" stroke-dasharray="8,12" opacity="0.45" />
+  </g>
+
+  <g>
+    <circle cx="960" cy="380" r="9" fill="#0284C7" />
+    <circle cx="960" cy="380" r="22" fill="none" stroke="#0284C7" stroke-width="1.6" opacity="0.7" />
+
+    <circle cx="640" cy="680" r="7.5" fill="#4F46E5" />
+    <circle cx="1440" cy="220" r="8" fill="#0284C7" />
+    <circle cx="1080" cy="480" r="7.5" fill="#1E40AF" />
+    <circle cx="1560" cy="320" r="6.5" fill="#0284C7" />
+    <circle cx="380" cy="440" r="7.5" fill="#7C3AED" />
+
+    <circle cx="1650" cy="280" r="6" fill="#1E40AF" />
+    <circle cx="1700" cy="120" r="5.5" fill="#0284C7" />
+    <circle cx="1820" cy="240" r="5.5" fill="#4F46E5" />
+  </g>
+</svg>

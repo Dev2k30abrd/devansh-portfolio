@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="cert-dark-glow" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.38"/>
+      <stop offset="45%" stop-color="#8B5CF6" stop-opacity="0.2"/>
+      <stop offset="75%" stop-color="#38BDF8" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0C0D12" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#cert-dark-glow)" />
+
+  <!-- Cryptographic Hexagonal Knowledge Mesh & Proof Lattices -->
+  <g stroke="#6366F1" stroke-width="1.6" fill="none" opacity="0.6">
+    <!-- Center Signature Knowledge Hexagon -->
+    <polygon points="960,280 1120,370 1120,550 960,640 800,550 800,370" stroke="#38BDF8" stroke-width="2.6" />
+    <polygon points="960,330 1060,390 1060,530 960,590 860,530 860,390" stroke="#818CF8" stroke-width="1.8" stroke-dasharray="6,6" opacity="0.75"/>
+
+    <!-- Left Flanking Honeycombs -->
+    <polygon points="620,380 720,440 720,560 620,620 520,560 520,440" stroke="#818CF8" stroke-width="2" />
+    <polygon points="420,280 520,340 520,460 420,520 320,460 320,340" stroke="#6366F1" stroke-width="1.8" stroke-dasharray="6,6" opacity="0.6"/>
+
+    <!-- Right Flanking Honeycombs -->
+    <polygon points="1300,380 1400,440 1400,560 1300,620 1200,560 1200,440" stroke="#A855F7" stroke-width="2" />
+    <polygon points="1500,280 1600,340 1600,460 1500,520 1400,460 1400,340" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="6,6" opacity="0.6"/>
+
+    <!-- Connecting Verification Beams -->
+    <line x1="800" y1="460" x2="720" y2="460" stroke="#38BDF8" stroke-width="2.2" />
+    <line x1="1120" y1="460" x2="1200" y2="460" stroke="#38BDF8" stroke-width="2.2" />
+
+    <line x1="520" y1="460" x2="420" y2="400" stroke="#818CF8" stroke-dasharray="4,6" stroke-width="1.6"/>
+    <line x1="1400" y1="460" x2="1500" y2="400" stroke="#818CF8" stroke-dasharray="4,6" stroke-width="1.6"/>
+
+    <!-- Verification Rings -->
+    <circle cx="960" cy="460" r="280" stroke="#818CF8" stroke-width="1.4" stroke-dasharray="10,14" opacity="0.5" />
+    <circle cx="960" cy="460" r="440" stroke="#38BDF8" stroke-width="1" stroke-dasharray="6,18" opacity="0.4" />
+  </g>
+
+  <!-- Knowledge Vertices & Cryptographic Points -->
+  <g>
+    <!-- Center Hexagon Points -->
+    <circle cx="960" cy="280" r="8" fill="#38BDF8" />
+    <circle cx="1120" cy="370" r="7.5" fill="#818CF8" />
+    <circle cx="1120" cy="550" r="7.5" fill="#A855F7" />
+    <circle cx="960" cy="640" r="9" fill="#FFFFFF" />
+    <circle cx="800" cy="550" r="7.5" fill="#818CF8" />
+    <circle cx="800" cy="370" r="7.5" fill="#38BDF8" />
+
+    <circle cx="960" cy="460" r="10" fill="#6366F1" />
+    <circle cx="960" cy="460" r="3.5" fill="#FFFFFF" />
+
+    <!-- Flanking Nodes -->
+    <circle cx="620" cy="380" r="7" fill="#818CF8" />
+    <circle cx="720" cy="460" r="8" fill="#38BDF8" />
+    <circle cx="1300" cy="380" r="7" fill="#A855F7" />
+    <circle cx="1200" cy="460" r="8" fill="#38BDF8" />
+  </g>
+</svg>

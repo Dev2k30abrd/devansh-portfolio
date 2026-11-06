@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="proj-dark-glow" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.4"/>
+      <stop offset="45%" stop-color="#38BDF8" stop-opacity="0.22"/>
+      <stop offset="75%" stop-color="#8B5CF6" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0C0D12" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wave-dark-1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#818CF8" stop-opacity="0.45"/>
+    </linearGradient>
+    <linearGradient id="wave-dark-2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#4F46E5" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#proj-dark-glow)" />
+
+  <!-- Prominent Multi-Dimensional Machine Learning Splines & Telemetry -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M 0 520 C 320 340, 640 680, 960 380 S 1440 220, 1920 420" stroke="url(#wave-dark-1)" stroke-width="3.4" />
+    <path d="M 0 620 C 380 440, 720 740, 1080 480 S 1560 320, 1920 520" stroke="url(#wave-dark-2)" stroke-width="2.8" />
+    <path d="M 0 720 C 440 560, 800 820, 1200 580 S 1680 420, 1920 620" stroke="url(#wave-dark-1)" stroke-width="2.2" stroke-dasharray="10,8" opacity="0.8"/>
+
+    <!-- Large Radar / Multimodal Vector Polygon Wireframe -->
+    <polygon points="1520,200 1700,120 1820,240 1760,420 1600,440 1480,320" stroke="#818CF8" stroke-width="2" opacity="0.6" />
+    <polygon points="1540,230 1670,170 1760,260 1720,380 1610,400 1515,315" stroke="#38BDF8" stroke-width="1.6" opacity="0.5" />
+    <line x1="1650" y1="280" x2="1520" y2="200" stroke="#6366F1" stroke-width="1.2" opacity="0.5"/>
+    <line x1="1650" y1="280" x2="1700" y2="120" stroke="#6366F1" stroke-width="1.2" opacity="0.5"/>
+    <line x1="1650" y1="280" x2="1820" y2="240" stroke="#6366F1" stroke-width="1.2" opacity="0.5"/>
+    <line x1="1650" y1="280" x2="1760" y2="420" stroke="#6366F1" stroke-width="1.2" opacity="0.5"/>
+    <line x1="1650" y1="280" x2="1600" y2="440" stroke="#6366F1" stroke-width="1.2" opacity="0.5"/>
+    <line x1="1650" y1="280" x2="1480" y2="320" stroke="#6366F1" stroke-width="1.2" opacity="0.5"/>
+
+    <!-- Latitudinal Axes -->
+    <line x1="80" y1="380" x2="1840" y2="380" stroke="#6366F1" stroke-width="1.2" stroke-dasharray="8,12" opacity="0.45" />
+    <line x1="80" y1="580" x2="1840" y2="580" stroke="#38BDF8" stroke-width="1.4" stroke-dasharray="8,12" opacity="0.5" />
+    <line x1="80" y1="760" x2="1840" y2="760" stroke="#818CF8" stroke-width="1.2" stroke-dasharray="8,12" opacity="0.4" />
+  </g>
+
+  <!-- High-Visibility Data Manifold Peak Nodes -->
+  <g>
+    <circle cx="960" cy="380" r="10" fill="#38BDF8" />
+    <circle cx="960" cy="380" r="24" fill="none" stroke="#38BDF8" stroke-width="1.8" opacity="0.75" />
+
+    <circle cx="640" cy="680" r="8" fill="#818CF8" />
+    <circle cx="1440" cy="220" r="9" fill="#38BDF8" />
+    <circle cx="1080" cy="480" r="8" fill="#6366F1" />
+    <circle cx="1560" cy="320" r="7" fill="#38BDF8" />
+    <circle cx="380" cy="440" r="8" fill="#A855F7" />
+
+    <!-- Radar Points -->
+    <circle cx="1650" cy="280" r="7" fill="#FFFFFF" />
+    <circle cx="1700" cy="120" r="6" fill="#38BDF8" />
+    <circle cx="1820" cy="240" r="6" fill="#818CF8" />
+    <circle cx="1760" cy="420" r="6" fill="#A855F7" />
+  </g>
+</svg>
