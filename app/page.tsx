@@ -538,8 +538,13 @@ export default function Home() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const lastScrollY = useRef(0);
+  const isNavigatingRef = useRef(false);
+  const navTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Rotating role subtitle for Hero
   useEffect(() => {
@@ -560,7 +565,64 @@ export default function Home() {
     }
   }, [isProfileOpen]);
 
-  // Keyboard accessibility and auto-collapse on scroll, outside click, or Escape
+  // Scroll direction detection: hide on scroll down (> 80px), reveal on scroll up
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    lastScrollY.current = Math.max(0, window.scrollY);
+    let ticking = false;
+
+    const updateHeader = () => {
+      const currentScrollY = Math.max(0, window.scrollY);
+
+      // If programmatic anchor navigation is active, preserve visibility and skip checks
+      if (isNavigatingRef.current) {
+        lastScrollY.current = currentScrollY;
+        ticking = false;
+        return;
+      }
+
+      // Always show near top of the page (within 80px)
+      if (currentScrollY <= 80) {
+        setIsHeaderVisible(true);
+        lastScrollY.current = currentScrollY;
+        ticking = false;
+        return;
+      }
+
+      const diff = currentScrollY - lastScrollY.current;
+      const threshold = 12; // Avoid micro-trackpad jitter / flickering
+
+      if (Math.abs(diff) >= threshold) {
+        if (diff > 0 && currentScrollY > 80) {
+          // Scrolling down beyond 80px -> smoothly hide header
+          setIsHeaderVisible(false);
+        } else if (diff < 0) {
+          // Scrolling up -> smoothly reveal header
+          setIsHeaderVisible(true);
+        }
+        lastScrollY.current = currentScrollY;
+      }
+
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (navTimeoutRef.current) clearTimeout(navTimeoutRef.current);
+    };
+  }, []);
+
+  // Keyboard accessibility and click outside dismissal for Menu and Profile Modal
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -582,20 +644,12 @@ export default function Home() {
       }
     };
 
-    const handleScroll = () => {
-      if (isMenuOpen) {
-        setIsMenuOpen(false);
-      }
-    };
-
     window.addEventListener("keydown", handleKeyDown);
     document.addEventListener("mousedown", handleClickOutside);
-    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("mousedown", handleClickOutside);
-      window.removeEventListener("scroll", handleScroll);
     };
   }, [isMenuOpen, isProfileOpen]);
 
@@ -614,10 +668,27 @@ export default function Home() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     setIsMenuOpen(false);
+    isNavigatingRef.current = true;
+
+    if (targetId === "hero") {
+      setIsHeaderVisible(true);
+    }
+
     const target = document.getElementById(targetId);
     if (target) {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+
+    if (navTimeoutRef.current) clearTimeout(navTimeoutRef.current);
+    navTimeoutRef.current = setTimeout(() => {
+      isNavigatingRef.current = false;
+      if (typeof window !== "undefined") {
+        lastScrollY.current = Math.max(0, window.scrollY);
+        if (window.scrollY <= 80) {
+          setIsHeaderVisible(true);
+        }
+      }
+    }, 850);
   };
 
   const mounted = useSyncExternalStore(
@@ -663,15 +734,26 @@ export default function Home() {
     setTimeout(() => setCopiedEmail(false), 2500);
   };
 
+  const shouldShowHeader = isHeaderVisible || isMenuOpen;
+
   return (
     <div className="relative min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] transition-colors duration-300">
       {/* ── Scroll-Reactive Cinematic Background System ── */}
       <CinematicBackground activeSection={activeSection} />
 
-      {/* ── Fixed Header ── */}
+      {/* ── Fixed Header with Scroll-Direction Hide / Reveal ── */}
       <header
         ref={headerRef}
-        className="fixed top-0 left-0 right-0 z-50 bg-[var(--bg-page)]/90 backdrop-blur-md border-b border-[var(--border-subtle)] transition-colors duration-300"
+        onFocusCapture={() => setIsHeaderVisible(true)}
+        style={{
+          transform: shouldShowHeader ? "translateY(0)" : "translateY(-100%)",
+          opacity: shouldShowHeader ? 1 : 0,
+          transition: "transform 280ms cubic-bezier(0.16, 1, 0.3, 1), opacity 280ms cubic-bezier(0.16, 1, 0.3, 1)",
+          willChange: "transform, opacity",
+        }}
+        className={`fixed top-0 left-0 right-0 z-50 bg-[var(--bg-page)]/90 backdrop-blur-md border-b border-[var(--border-subtle)] motion-reduce:!transition-none ${
+          shouldShowHeader ? "pointer-events-auto" : "pointer-events-none"
+        }`}
       >
         <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between relative">
           {/* LEFT: Devansh Rai branding opens Profile Photograph Modal without navigating */}
