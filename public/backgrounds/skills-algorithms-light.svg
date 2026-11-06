@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="skills-light-glow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#E0E7FF" stop-opacity="0.8"/>
+      <stop offset="45%" stop-color="#EEF2FF" stop-opacity="0.55"/>
+      <stop offset="75%" stop-color="#F8FAFC" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#skills-light-glow)" />
+
+  <g stroke="#4F46E5" stroke-width="1.6" fill="none" opacity="0.55">
+    <path d="M 380 180 L 380 340 L 220 480 L 140 640" stroke-width="2.2" stroke="#0284C7"/>
+    <path d="M 380 340 L 540 480 L 620 640" stroke-width="2.2" stroke="#4F46E5"/>
+    <path d="M 220 480 L 300 640" stroke-width="1.8"/>
+    <path d="M 540 480 L 460 640" stroke-width="1.8"/>
+
+    <path d="M 1540 180 L 1540 340 L 1380 480 L 1300 640" stroke-width="2.2" stroke="#4F46E5"/>
+    <path d="M 1540 340 L 1700 480 L 1780 640" stroke-width="2.2" stroke="#7C3AED"/>
+    <path d="M 1380 480 L 1460 640" stroke-width="1.8"/>
+    <path d="M 1700 480 L 1620 640" stroke-width="1.8"/>
+
+    <polygon points="960,300 1100,380 1100,540 960,620 820,540 820,380" stroke="#0284C7" stroke-width="2.4" />
+    <polygon points="960,200 1200,340 1200,580 960,720 720,580 720,340" stroke="#4F46E5" stroke-width="1.8" stroke-dasharray="8,8" />
+
+    <line x1="820" y1="460" x2="1100" y2="460" stroke="#0284C7" stroke-dasharray="6,6" stroke-width="1.6"/>
+    <line x1="960" y1="300" x2="960" y2="620" stroke="#4F46E5" stroke-dasharray="6,6" stroke-width="1.6"/>
+
+    <line x1="500" y1="840" x2="1420" y2="840" stroke="#0284C7" stroke-width="1.8" />
+  </g>
+
+  <g>
+    <circle cx="960" cy="300" r="7" fill="#0284C7" />
+    <circle cx="1100" cy="380" r="7" fill="#4F46E5" />
+    <circle cx="1100" cy="540" r="7" fill="#7C3AED" />
+    <circle cx="960" cy="620" r="8" fill="#1E40AF" />
+    <circle cx="820" cy="540" r="7" fill="#4F46E5" />
+    <circle cx="820" cy="380" r="7" fill="#0284C7" />
+
+    <circle cx="960" cy="460" r="9" fill="#0284C7" />
+
+    <circle cx="380" cy="180" r="7" fill="#0284C7"/>
+    <circle cx="380" cy="340" r="6.5" fill="#4F46E5"/>
+    <circle cx="220" cy="480" r="6.5" fill="#0284C7"/>
+    <circle cx="540" cy="480" r="6.5" fill="#4F46E5"/>
+
+    <circle cx="1540" cy="180" r="7" fill="#4F46E5"/>
+    <circle cx="1540" cy="340" r="6.5" fill="#7C3AED"/>
+    <circle cx="1380" cy="480" r="6.5" fill="#4F46E5"/>
+    <circle cx="1700" cy="480" r="6.5" fill="#0284C7"/>
+  </g>
+</svg>

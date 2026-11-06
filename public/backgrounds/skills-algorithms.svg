@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="skills-dark-glow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.38"/>
+      <stop offset="45%" stop-color="#6366F1" stop-opacity="0.2"/>
+      <stop offset="75%" stop-color="#8B5CF6" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0C0D12" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#skills-dark-glow)" />
+
+  <!-- Prominent Computational Patterns & Algorithmic Geometry -->
+  <g stroke="#6366F1" stroke-width="1.6" fill="none" opacity="0.6">
+    <!-- Binary Tree / Algorithm Branching (Left) -->
+    <path d="M 380 180 L 380 340 L 220 480 L 140 640" stroke-width="2.2" stroke="#38BDF8"/>
+    <path d="M 380 340 L 540 480 L 620 640" stroke-width="2.2" stroke="#818CF8"/>
+    <path d="M 220 480 L 300 640" stroke-width="1.8"/>
+    <path d="M 540 480 L 460 640" stroke-width="1.8"/>
+
+    <!-- Right Side Algorithm Lattice -->
+    <path d="M 1540 180 L 1540 340 L 1380 480 L 1300 640" stroke-width="2.2" stroke="#818CF8"/>
+    <path d="M 1540 340 L 1700 480 L 1780 640" stroke-width="2.2" stroke="#A855F7"/>
+    <path d="M 1380 480 L 1460 640" stroke-width="1.8"/>
+    <path d="M 1700 480 L 1620 640" stroke-width="1.8"/>
+
+    <!-- Central Nested Geometry & Logic Core -->
+    <polygon points="960,300 1100,380 1100,540 960,620 820,540 820,380" stroke="#38BDF8" stroke-width="2.6" />
+    <polygon points="960,200 1200,340 1200,580 960,720 720,580 720,340" stroke="#818CF8" stroke-width="2" stroke-dasharray="8,8" />
+    <polygon points="960,110 1300,300 1300,630 960,820 620,630 620,300" stroke="#6366F1" stroke-width="1.6" opacity="0.5"/>
+
+    <!-- Code Coordinate Grids -->
+    <line x1="820" y1="460" x2="1100" y2="460" stroke="#38BDF8" stroke-dasharray="6,6" stroke-width="1.6"/>
+    <line x1="960" y1="300" x2="960" y2="620" stroke="#818CF8" stroke-dasharray="6,6" stroke-width="1.6"/>
+
+    <line x1="500" y1="840" x2="1420" y2="840" stroke="#38BDF8" stroke-width="2" />
+    <line x1="600" y1="910" x2="1320" y2="910" stroke="#6366F1" stroke-dasharray="10,10" stroke-width="1.6"/>
+  </g>
+
+  <!-- High-Visibility Algorithmic Nodes -->
+  <g>
+    <!-- Center Hexagon Vertices -->
+    <circle cx="960" cy="300" r="8" fill="#38BDF8" />
+    <circle cx="1100" cy="380" r="8" fill="#818CF8" />
+    <circle cx="1100" cy="540" r="8" fill="#A855F7" />
+    <circle cx="960" cy="620" r="9" fill="#FFFFFF" />
+    <circle cx="820" cy="540" r="8" fill="#818CF8" />
+    <circle cx="820" cy="380" r="8" fill="#38BDF8" />
+
+    <circle cx="960" cy="460" r="10" fill="#38BDF8" />
+    <circle cx="960" cy="460" r="3" fill="#FFFFFF" />
+
+    <!-- Tree Vertices -->
+    <circle cx="380" cy="180" r="8" fill="#38BDF8"/>
+    <circle cx="380" cy="340" r="7" fill="#818CF8"/>
+    <circle cx="220" cy="480" r="7" fill="#38BDF8"/>
+    <circle cx="540" cy="480" r="7" fill="#818CF8"/>
+
+    <circle cx="1540" cy="180" r="8" fill="#818CF8"/>
+    <circle cx="1540" cy="340" r="7" fill="#A855F7"/>
+    <circle cx="1380" cy="480" r="7" fill="#818CF8"/>
+    <circle cx="1700" cy="480" r="7" fill="#38BDF8"/>
+
+    <circle cx="760" cy="840" r="6" fill="#38BDF8"/>
+    <circle cx="960" cy="840" r="8" fill="#FFFFFF"/>
+    <circle cx="1160" cy="840" r="6" fill="#38BDF8"/>
+  </g>
+</svg>

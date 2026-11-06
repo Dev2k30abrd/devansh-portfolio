@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Light Refined Architectural Canvas -->
+    <linearGradient id="bg-light-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF9F6"/>
+      <stop offset="45%" stop-color="#F1F4F9"/>
+      <stop offset="85%" stop-color="#E8EDF5"/>
+      <stop offset="100%" stop-color="#FAF9F6"/>
+    </linearGradient>
+
+    <!-- Warm Amber / Gold Light Wash (Key light) -->
+    <radialGradient id="amber-light-key" cx="72%" cy="22%" r="65%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.25"/>
+      <stop offset="35%" stop-color="#FB923C" stop-opacity="0.14"/>
+      <stop offset="65%" stop-color="#4F46E5" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Cool Ambient Fill (Left) -->
+    <radialGradient id="cool-light-fill" cx="18%" cy="75%" r="55%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.12"/>
+      <stop offset="45%" stop-color="#38BDF8" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Realistic Soft Ambient Occlusion Shadows for Light Background -->
+    <filter id="shadow-light-large" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="12" dy="28" stdDeviation="22" flood-color="#0F172A" flood-opacity="0.14"/>
+    </filter>
+    <filter id="shadow-light-med" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="8" dy="18" stdDeviation="15" flood-color="#0F172A" flood-opacity="0.12"/>
+    </filter>
+    <filter id="dof-blur-light" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+
+    <!-- Cube 1 (Left) Facet Gradients for Light Theme -->
+    <linearGradient id="cube1-light-top" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="60%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="cube1-light-right" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#312E81"/>
+    </linearGradient>
+    <linearGradient id="cube1-light-left" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="60%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <!-- Cube 2 (Right) Facet Gradients for Light Theme -->
+    <linearGradient id="cube2-light-top" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="50%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#FEF3C7"/>
+    </linearGradient>
+    <linearGradient id="cube2-light-front" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EA580C"/>
+      <stop offset="50%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="cube2-light-side" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#64748B"/>
+      <stop offset="60%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <!-- Orbit Ring Gradient -->
+    <linearGradient id="ring-light-amber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706" stop-opacity="0.6"/>
+      <stop offset="45%" stop-color="#4F46E5" stop-opacity="0.4"/>
+      <stop offset="85%" stop-color="#0284C7" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base Light Background -->
+  <rect width="1920" height="1080" fill="url(#bg-light-gradient)" />
+  <rect width="1920" height="1080" fill="url(#amber-light-key)" />
+  <rect width="1920" height="1080" fill="url(#cool-light-fill)" />
+
+  <!-- Perspective Depth Floor Grid -->
+  <g opacity="0.35" stroke="#4F46E5" stroke-width="1.2">
+    <line x1="960" y1="560" x2="100" y2="1080" stroke-opacity="0.2"/>
+    <line x1="960" y1="560" x2="480" y2="1080" stroke-opacity="0.25"/>
+    <line x1="960" y1="560" x2="800" y2="1080" stroke-opacity="0.3"/>
+    <line x1="960" y1="560" x2="960" y2="1080" stroke-opacity="0.35"/>
+    <line x1="960" y1="560" x2="1120" y2="1080" stroke-opacity="0.3"/>
+    <line x1="960" y1="560" x2="1440" y2="1080" stroke-opacity="0.25"/>
+    <line x1="960" y1="560" x2="1820" y2="1080" stroke-opacity="0.2"/>
+    <ellipse cx="960" cy="980" rx="1050" ry="220" fill="none" stroke-opacity="0.25"/>
+    <ellipse cx="960" cy="850" rx="840" ry="160" fill="none" stroke-opacity="0.2"/>
+  </g>
+
+  <!-- Far Background Blurred 3D Cube (Upper Right) -->
+  <g transform="translate(1600, 110) scale(0.65)" filter="url(#dof-blur-light)" opacity="0.75">
+    <polygon points="100,20 170,55 100,90 30,55" fill="url(#cube2-light-top)" />
+    <polygon points="30,55 100,90 100,180 30,145" fill="#475569" />
+    <polygon points="100,90 170,55 170,145 100,180" fill="#EA580C" opacity="0.85" />
+  </g>
+
+  <!-- Far Background Blurred 3D Cube (Lower Left) -->
+  <g transform="translate(110, 680) scale(0.7)" filter="url(#dof-blur-light)" opacity="0.7">
+    <polygon points="100,20 170,55 100,90 30,55" fill="url(#cube1-light-top)" />
+    <polygon points="30,55 100,90 100,180 30,145" fill="#334155" />
+    <polygon points="100,90 170,55 170,145 100,180" fill="#4F46E5" opacity="0.75" />
+  </g>
+
+  <!-- 3D Orbital Rings -->
+  <g opacity="0.6">
+    <ellipse cx="960" cy="480" rx="800" ry="290" transform="rotate(-15 960 480)" fill="none" stroke="url(#ring-light-amber)" stroke-width="2" stroke-dasharray="16 8"/>
+    <ellipse cx="960" cy="490" rx="720" ry="240" transform="rotate(22 960 490)" fill="none" stroke="url(#ring-light-amber)" stroke-width="1.6"/>
+  </g>
+
+  <!-- PRIMARY HERO 3D CUBE (Left Side) -->
+  <g transform="translate(180, 240)" filter="url(#shadow-light-large)">
+    <ellipse cx="140" cy="380" rx="160" ry="45" fill="#334155" opacity="0.15" filter="url(#dof-blur-light)"/>
+
+    <polygon points="30,110 140,165 140,320 30,265" fill="url(#cube1-light-left)" />
+    <polygon points="140,165 250,110 250,265 140,320" fill="url(#cube1-light-right)" />
+    <polygon points="140,55 250,110 140,165 30,110" fill="url(#cube1-light-top)" />
+
+    <line x1="140" y1="55" x2="250" y2="110" stroke="#FFFBEB" stroke-width="2" stroke-linecap="round"/>
+    <line x1="30" y1="110" x2="140" y2="165" stroke="#FEF3C7" stroke-width="1.6" stroke-linecap="round"/>
+    <line x1="140" y1="165" x2="250" y2="110" stroke="#FDE68A" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Small Accent Satellite -->
+    <g transform="translate(230, 20) scale(0.38)">
+      <polygon points="100,20 170,55 100,90 30,55" fill="url(#cube1-light-top)" />
+      <polygon points="30,55 100,90 100,180 30,145" fill="#334155" />
+      <polygon points="100,90 170,55 170,145 100,180" fill="url(#cube1-light-right)" />
+    </g>
+  </g>
+
+  <!-- SECONDARY HERO 3D CUBE (Right Side) -->
+  <g transform="translate(1420, 290)" filter="url(#shadow-light-large)">
+    <ellipse cx="140" cy="360" rx="150" ry="40" fill="#334155" opacity="0.14" filter="url(#dof-blur-light)"/>
+
+    <polygon points="40,115 140,170 140,310 40,255" fill="url(#cube2-light-side)" />
+    <polygon points="140,170 240,115 240,255 140,310" fill="url(#cube2-light-front)" />
+    <polygon points="140,60 240,115 140,170 40,115" fill="url(#cube2-light-top)" />
+
+    <line x1="140" y1="60" x2="240" y2="115" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="40" y1="115" x2="140" y2="170" stroke="#FDE68A" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="140" y1="170" x2="240" y2="115" stroke="#FDE68A" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Small Floating Prismatic Gem (Right) -->
+    <g transform="translate(-50, 180) scale(0.4)">
+      <polygon points="100,10 180,90 100,170 20,90" fill="url(#cube2-light-top)" opacity="0.9"/>
+      <polygon points="100,10 180,90 100,90" fill="#FFF" opacity="0.6"/>
+      <polygon points="180,90 100,170 100,90" fill="#EA580C" opacity="0.8"/>
+      <polygon points="100,170 20,90 100,90" fill="#4F46E5" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- Mid-Top Floating Abstract 3D Geometric Tetrahedron -->
+  <g transform="translate(1180, 140) scale(0.55)" filter="url(#shadow-light-med)">
+    <polygon points="120,20 210,140 120,180 30,140" fill="url(#cube1-light-top)" opacity="0.9"/>
+    <polygon points="120,20 210,140 120,110" fill="#FEF08A" opacity="0.8"/>
+    <polygon points="210,140 120,180 120,110" fill="#EA580C" opacity="0.85"/>
+    <polygon points="120,180 30,140 120,110" fill="#4338CA" opacity="0.75"/>
+  </g>
+
+  <!-- Ambient Light Dust Particles -->
+  <g fill="#D97706" opacity="0.7">
+    <circle cx="560" cy="210" r="3.5" fill="#F59E0B"/>
+    <circle cx="780" cy="170" r="4" fill="#EA580C"/>
+    <circle cx="1120" cy="180" r="4.5" fill="#D97706"/>
+    <circle cx="1360" cy="220" r="3.5" fill="#F59E0B"/>
+    <circle cx="420" cy="460" r="3" fill="#0284C7"/>
+    <circle cx="1490" cy="520" r="4" fill="#D97706"/>
+    <circle cx="710" cy="620" r="2.5" fill="#6366F1"/>
+    <circle cx="1240" cy="580" r="3" fill="#D97706"/>
+  </g>
+</svg>

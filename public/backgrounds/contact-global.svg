@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="contact-dark-glow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.38"/>
+      <stop offset="45%" stop-color="#38BDF8" stop-opacity="0.2"/>
+      <stop offset="75%" stop-color="#8B5CF6" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0C0D12" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#contact-dark-glow)" />
+
+  <!-- Prominent Global Digital Interconnection Network & Spherical Arcs -->
+  <g stroke="#6366F1" stroke-width="1.6" fill="none" opacity="0.6">
+    <!-- Globe Horizon Arcs -->
+    <ellipse cx="960" cy="540" rx="720" ry="360" stroke="#818CF8" stroke-width="2.2" opacity="0.6" />
+    <ellipse cx="960" cy="540" rx="560" ry="260" stroke-dasharray="10,10" stroke-width="1.8" opacity="0.55" />
+    <ellipse cx="960" cy="540" rx="400" ry="170" stroke-dasharray="6,8" stroke-width="1.6" opacity="0.45" />
+
+    <!-- Longitudinal Beams -->
+    <path d="M 240 540 Q 960 100, 1680 540" stroke="url(#beam-dark)" stroke-width="2.6" />
+    <path d="M 240 540 Q 960 980, 1680 540" stroke="url(#beam-dark)" stroke-width="2.6" />
+    <path d="M 380 540 Q 960 200, 1540 540" stroke-dasharray="8,8" stroke-width="2" opacity="0.6" />
+    <path d="M 380 540 Q 960 880, 1540 540" stroke-dasharray="8,8" stroke-width="2" opacity="0.6" />
+
+    <!-- Transcontinental Communication Links -->
+    <path d="M 480 460 Q 760 280, 1060 420 T 1460 500" stroke="#38BDF8" stroke-width="2.8" opacity="0.85"/>
+    <path d="M 660 580 Q 960 700, 1300 440" stroke="#818CF8" stroke-width="2.4" stroke-dasharray="10,8" opacity="0.75"/>
+  </g>
+
+  <!-- Major Hubs & Interconnected Light Nodes -->
+  <g>
+    <!-- Core Center Global Hub -->
+    <circle cx="960" cy="540" r="10" fill="#38BDF8" />
+    <circle cx="960" cy="540" r="26" fill="none" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="4,6" opacity="0.8" />
+
+    <circle cx="480" cy="460" r="8" fill="#818CF8" />
+    <circle cx="1060" cy="420" r="9" fill="#FFFFFF" />
+    <circle cx="1460" cy="500" r="8" fill="#38BDF8" />
+
+    <circle cx="660" cy="580" r="7.5" fill="#A855F7" />
+    <circle cx="1300" cy="440" r="7.5" fill="#818CF8" />
+
+    <!-- Satellite Nodes -->
+    <circle cx="740" cy="360" r="5" fill="#FFFFFF" />
+    <circle cx="1200" cy="340" r="6" fill="#38BDF8" />
+    <circle cx="840" cy="640" r="5.5" fill="#818CF8" />
+    <circle cx="1380" cy="620" r="6" fill="#A855F7" />
+    <circle cx="380" cy="540" r="6" fill="#6366F1" />
+    <circle cx="1540" cy="540" r="6" fill="#6366F1" />
+  </g>
+</svg>

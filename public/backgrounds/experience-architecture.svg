@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="exp-dark-glow" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.38"/>
+      <stop offset="45%" stop-color="#6366F1" stop-opacity="0.2"/>
+      <stop offset="75%" stop-color="#38BDF8" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0C0D12" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bus-glow-1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#exp-dark-glow)" />
+
+  <!-- Architecture Server Bus Infrastructure -->
+  <g stroke="#6366F1" stroke-width="1.8" fill="none" opacity="0.6">
+    <!-- Horizontal Core Backbone Buses -->
+    <line x1="80" y1="260" x2="1840" y2="260" stroke="url(#bus-glow-1)" stroke-width="2.8" />
+    <line x1="80" y1="460" x2="1840" y2="460" stroke="url(#bus-glow-1)" stroke-width="3.4" />
+    <line x1="80" y1="660" x2="1840" y2="660" stroke="url(#bus-glow-1)" stroke-width="2.8" />
+    <line x1="80" y1="840" x2="1840" y2="840" stroke="url(#bus-glow-1)" stroke-width="2" stroke-dasharray="10,10" />
+
+    <!-- Vertical Routing Channels -->
+    <line x1="340" y1="160" x2="340" y2="940" stroke-dasharray="6,8" stroke-width="1.6" />
+    <line x1="720" y1="160" x2="720" y2="940" stroke-width="2" stroke="#38BDF8" />
+    <line x1="1100" y1="160" x2="1100" y2="940" stroke-dasharray="6,8" stroke-width="1.6" />
+    <line x1="1480" y1="160" x2="1480" y2="940" stroke-width="2" stroke="#A855F7" />
+
+    <!-- Circuit Routing Jumpers -->
+    <path d="M 340 260 L 480 340 L 480 460" stroke-width="2" />
+    <path d="M 720 260 L 860 380 L 860 660" stroke-width="2.2" stroke="#38BDF8" />
+    <path d="M 1100 460 L 1240 540 L 1240 660" stroke-width="2" />
+    <path d="M 1480 260 L 1620 380 L 1620 460" stroke-width="2" />
+
+    <!-- Prominent Modular Server Infrastructure Blocks -->
+    <rect x="250" y="210" width="180" height="100" rx="12" stroke="#818CF8" stroke-width="2" fill="#141722" fill-opacity="0.4"/>
+    <rect x="630" y="410" width="180" height="100" rx="12" stroke="#38BDF8" stroke-width="2.4" fill="#141722" fill-opacity="0.5"/>
+    <rect x="1010" y="210" width="180" height="100" rx="12" stroke="#818CF8" stroke-width="2" fill="#141722" fill-opacity="0.4"/>
+    <rect x="1390" y="410" width="180" height="100" rx="12" stroke="#A855F7" stroke-width="2.4" fill="#141722" fill-opacity="0.5"/>
+    <rect x="630" y="610" width="180" height="100" rx="12" stroke="#818CF8" stroke-width="2" fill="#141722" fill-opacity="0.4"/>
+    <rect x="1010" y="610" width="180" height="100" rx="12" stroke="#38BDF8" stroke-width="2" fill="#141722" fill-opacity="0.4"/>
+  </g>
+
+  <!-- Server Activity Status Dots & Port Indicators -->
+  <g>
+    <!-- Server 1 Ports -->
+    <circle cx="280" cy="260" r="5" fill="#38BDF8" />
+    <circle cx="310" cy="260" r="5" fill="#818CF8" />
+    <circle cx="340" cy="260" r="6" fill="#FFFFFF" />
+
+    <!-- Server 2 Ports -->
+    <circle cx="660" cy="460" r="6" fill="#38BDF8" />
+    <circle cx="690" cy="460" r="7" fill="#FFFFFF" />
+    <circle cx="720" cy="460" r="8" fill="#38BDF8" />
+
+    <!-- Server 3 Ports -->
+    <circle cx="1040" cy="260" r="5" fill="#818CF8" />
+    <circle cx="1070" cy="260" r="5" fill="#38BDF8" />
+
+    <!-- Server 4 Ports -->
+    <circle cx="1420" cy="460" r="6" fill="#38BDF8" />
+    <circle cx="1450" cy="460" r="7" fill="#FFFFFF" />
+    <circle cx="1480" cy="460" r="8" fill="#A855F7" />
+
+    <!-- Major Bus Hub Points -->
+    <circle cx="720" cy="260" r="8" fill="#6366F1" />
+    <circle cx="720" cy="660" r="8" fill="#818CF8" />
+    <circle cx="1480" cy="260" r="8" fill="#818CF8" />
+    <circle cx="1480" cy="660" r="8" fill="#38BDF8" />
+  </g>
+</svg>

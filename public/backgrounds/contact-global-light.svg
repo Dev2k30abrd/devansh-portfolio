@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="contact-light-glow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#E0E7FF" stop-opacity="0.8"/>
+      <stop offset="45%" stop-color="#EEF2FF" stop-opacity="0.55"/>
+      <stop offset="75%" stop-color="#F8FAFC" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" stop-opacity="0.75"/>
+      <stop offset="50%" stop-color="#4F46E5" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#contact-light-glow)" />
+
+  <g stroke="#4F46E5" stroke-width="1.6" fill="none" opacity="0.55">
+    <ellipse cx="960" cy="540" rx="720" ry="360" stroke="#4F46E5" stroke-width="2" opacity="0.5" />
+    <ellipse cx="960" cy="540" rx="560" ry="260" stroke-dasharray="8,8" stroke-width="1.6" opacity="0.45" />
+
+    <path d="M 240 540 Q 960 100, 1680 540" stroke="url(#beam-light)" stroke-width="2.4" />
+    <path d="M 240 540 Q 960 980, 1680 540" stroke="url(#beam-light)" stroke-width="2.4" />
+
+    <path d="M 480 460 Q 760 280, 1060 420 T 1460 500" stroke="#0284C7" stroke-width="2.6" opacity="0.8"/>
+    <path d="M 660 580 Q 960 700, 1300 440" stroke="#4F46E5" stroke-width="2.2" stroke-dasharray="8,6" opacity="0.7"/>
+  </g>
+
+  <g>
+    <circle cx="960" cy="540" r="9" fill="#0284C7" />
+    <circle cx="960" cy="540" r="24" fill="none" stroke="#0284C7" stroke-width="1.6" stroke-dasharray="4,6" opacity="0.7" />
+
+    <circle cx="480" cy="460" r="7.5" fill="#4F46E5" />
+    <circle cx="1060" cy="420" r="8" fill="#1E40AF" />
+    <circle cx="1460" cy="500" r="7.5" fill="#0284C7" />
+
+    <circle cx="660" cy="580" r="7" fill="#7C3AED" />
+    <circle cx="1300" cy="440" r="7" fill="#4F46E5" />
+
+    <circle cx="740" cy="360" r="5" fill="#0284C7" />
+    <circle cx="1200" cy="340" r="5.5" fill="#0284C7" />
+    <circle cx="840" cy="640" r="5" fill="#4F46E5" />
+    <circle cx="1380" cy="620" r="5.5" fill="#7C3AED" />
+  </g>
+</svg>
